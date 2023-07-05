@@ -12,6 +12,14 @@ int  LEFT_LINE_TRACKER = A9;
 //int  FL_MOTOR = 2B;
 //int  BL_MOTOR = 2A;
 
+MeMegaPiDCMotor FR_MOTOR(PORT1A);
+
+MeMegaPiDCMotor BR_MOTOR(PORT1B);
+
+MeMegaPiDCMotor FL_MOTOR(PORT2A);
+
+MeMegaPiDCMotor BL_MOTOR(PORT2B);
+
 void setup() {
   // put your setup code here, to run once:
  
@@ -20,5 +28,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
+  FR_MOTOR.run(100);
+  BL_MOTOR.run(100);
 
 }
