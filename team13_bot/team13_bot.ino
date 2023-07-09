@@ -20,33 +20,19 @@ MeMegaPiDCMotor FL_MOTOR(PORT2A);
 
 MeMegaPiDCMotor BL_MOTOR(PORT2B);
 
+
+
 Bot bot; // Initialize our bot
 
 void setup() {
   // put your setup code here, to run once:
   bot.init(FR_MOTOR, FL_MOTOR, BR_MOTOR, BL_MOTOR);
-  pinMode(LEFT_IR_SENSOR, INPUT);
-  pinMode(RIGHT_IR_SENSOR, INPUT);
-  pinMode(TOP_IR_SENSOR, INPUT);
-  pinMode(LEFT_IMPACT_SWITCH, INPUT);
-  pinMode(RIGHT_IMPACT_SWITCH, INPUT);
-  pinMode(RIGHT_LED, OUTPUT);
-  pinMode(LEFT_LED, OUTPUT);
-  pinMode(RIGHT_LINE_TRACKER, INPUT);
-  pinMode(LEFT_LINE_TRACKER, INPUT);
+  
   Serial.begin(9600);
 
 }
 
 void loop() {
   // random example code
-  bot.moveForward(100);
-  delay(1000);
-  bot.moveBackward(100);
-  delay(1000);
-  bot.turnRight(0);
-  delay(1000);
-  bot.moveForward(100);
-  delay(1000);
-
+  bot.lineTracking();
 }
