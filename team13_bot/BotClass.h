@@ -40,7 +40,26 @@ class Bot { // Class to make accessing motors easier
             br_motor.stop();
             bl_motor.stop();
           }
-        void lineTracking() {} // To be implemented
+        void lineTracking() {
+              if RIGHT_LINE_TRACKER == 1 &amp; LEFT_LINE_TRACKER == 1 {
+                  while RIGHT_LINE_TRACKER == 1 &amp; LEFT_LINE_TRACKER == 1 {
+                        bot.moveForward(100);
+                  }
+            }
+            else if RIGHT_LINE_TRACKER != 1 &amp; LEFT_LINE_TRACKER == 1 {
+                  while RIGHT_LINE_TRACKER != 1 &amp; LEFT_LINE_TRACKER == 1 {
+                        bot.turnLeft(5);
+                  }
+            }
+            else if RIGHT_LINE_TRACKER == 1 &amp; LEFT_LINE_TRACKER != 1 {
+                  while RIGHT_LINE_TRACKER == 1 &amp; LEFT_LINE_TRACKER != 1 {
+                        bot.turnRight(5);
+                  }
+            }
+            else if RIGHT_LINE_TRACKER != 1 &amp; LEFT_LINE_TRACKER != 1 {
+                  bot.allStop();
+            }
+        }
         // Need some sort of obstacle detection as well
 
         
